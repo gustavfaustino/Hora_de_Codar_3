@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 
+  ^~^  ,
+ ('Y') )
+ /   \/ 
+(\|||/) Made by GustavG
+-->
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <style>
+      #result{
+        font-size: large;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-2">
+      <div id="result">
+
+      </div>
+    </div>
+    <script>function contagem(){
+      var i = 10
+      var contador = setInterval(function(){
+          document.getElementById('result').innerHTML=i
+          i--
+          if(i<1){
+              clearInterval(contador)
+          }
+      }, 1000) // Seta o tempo de delay, no caso 1s ou 1000ms
+  }
+  contagem()</script>
+  </body>
+</html>

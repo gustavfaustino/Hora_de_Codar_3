@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- 
+  ^~^  ,
+ ('Y') )
+ /   \/ 
+(\|||/) Made by GustavG
+-->
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divisor</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container p-4">
+      <div>
+        <p>Digite dois números, o dividendo e o divisor</p>
+        <br />
+      </div>
+      <!-- Primeira fileira -->
+      <div class="row">
+        <!-- Número 1 -->
+        <div class="col">
+          <label for="numero1" class="form-label"
+            >Digite o valor do 1° número:</label
+          >
+          <input
+            type="number"
+            id="numero1"
+            class="form-control"
+            placeholder="1° número aqui"
+          />
+        </div>
+        <!-- Número 2 -->
+        <div class="col">
+          <label for="numero2" class="form-label"
+            >Digite o valor do 2° número:</label
+          >
+          <input
+            type="number"
+            id="numero2"
+            class="form-control"
+            placeholder="2° número aqui"
+          />
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-success btn-block mt-3"
+        onclick="divisao()"
+      >
+        Divisão (/)
+      </button>
+    </div>
+    <script>/* 1 - Escreva um algoritmo para ler 2 valores informados pelo usuário
+      e se o segundo valor informado for igual ou menor que ZERO,
+     deve ser lido um novo valor.Ou seja, para o segundo valor não pode ser
+     aceito o valor zero, nem um valor negativo. 
+     
+     O seu programa deve imprimir o resultado da 
+     divisão do primeiro valor lido pelo segundo valor e 
+     exibir o resultado ao usuário.*/
+     
+     function divisao() {
+     
+         const numero1 = parseInt(document.getElementById("numero1").value);
+         const numero2 = parseInt(document.getElementById("numero2").value);
+         var contaDivide = numero1 / numero2;
+         if (!isNaN(numero1, numero2) && numero2 > 0) {
+             alert(contaDivide)
+         } else {
+             alert("Digite valores válidos, com um divisor maior que zero!");
+         }
+     }</script>
+  </body>
+</html>
