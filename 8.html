@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- 
+  ^~^  ,
+ ('Y') )
+ /   \/ 
+(\|||/) Made by GustavG
+-->
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Números</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-3">
+      <p>
+        Insira um valor para que seja exibido todos os números inteiros entre 1
+        e N.
+      </p>
+
+      <!-- Valor N -->
+      <div class="mb-3">
+        <label for="numero1" class="form-label"
+          >Digite um número qualquer, maior que 1:</label
+        >
+        <input
+          type="number"
+          id="numero"
+          class="form-control"
+          placeholder="Valor N aqui."
+          step="0.01"
+        />
+      </div>
+      <!-- Botão -->
+      <div class="pt-3">
+        <button class="btn btn-primary" onclick="listaNumeros()">
+          Clique aqui!
+        </button>
+      </div>
+      <div id="resultado">
+        <!-- Resultado -->
+      </div>
+    </div>
+
+    <!-- Lógica -->
+    <script>
+      function listaNumeros() {
+        try {
+          const numero = parseFloat(document.getElementById("numero").value);
+          arrayNumeros = [];
+
+          if (numero < 1 || isNaN(numero)) {
+            throw new Error("Digite números válidos!");
+          }
+
+          for (let i = 1; i <= numero; i++) {
+            arrayNumeros.push(i);
+          }
+
+          document.getElementById("resultado").innerHTML = `
+                <div class="alert alert-info" role="alert mt-3">
+                Todos os números:\n${arrayNumeros.join(', ')}
+                </div>
+                `;
+        } catch (erro){
+          console.error("Ocorreu um erro: " + erro.message);
+          alert("Erro: " + erro.message);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 
+  ^~^  ,
+ ('Y') )
+ /   \/ 
+(\|||/) Made by GustavG
+-->
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>os 10 de 100</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-3 text-center">
+      <div id="result" class="alert alert-info">
+        <!-- Resultado -->
+      </div>
+    </div>
+    <script>function maiorais(){
+
+        maiores = []
+        
+        for (let i = 101; i <= 110; i++) {
+            maiores.push(i);
+        }
+        
+        // Calcular a média aritmética
+        
+        
+        // Exibir o resultado
+        document.getElementById('result').textContent = `
+        Os 10 primeiros números inteiros maiores que 100 são: ${maiores.join(', ')}
+        `
+        
+        }
+        maiorais()</script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- 
+  ^~^  ,
+ ('Y') )
+ /   \/ 
+(\|||/) Made by GustavG
+-->
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificação de Intervalo</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="container mt-5">
+    <h2 class="text-center">Verifique os Valores</h2>
+
+    <div id="inputs" class="row g-3">
+      <!-- Inputs para 10 valores serão inseridos dinamicamente -->
+    </div>
+
+    <button class="btn btn-primary mt-3" onclick="verificarValores()">
+      Verificar Valores
+    </button>
+
+    <div id="resultado" class="mt-4"></div>
+
+    <script>
+      // Função para gerar os campos de input
+      function gerarCampos() {
+        const inputsDiv = document.getElementById("inputs");
+        for (let i = 1; i <= 10; i++) {
+          inputsDiv.innerHTML += `
+          <div class="col-md-4">
+            <label for="valor${i}" class="form-label">Valor ${i}</label>
+            <input type="number" id="valor${i}" class="form-control" placeholder="Digite um número">
+          </div>
+        `;
+        }
+        /* Confesso, isso aqui foi genial e vai ser TOTALMENTE ÚTIL 
+        basicamente ele gera todos os 10 campos assim que a pagina carregar,
+        junto da chamada da função lá em baixo.
+        Isso é simplesmente absurdo de rápido e facilitaria muito meu trabalho
+        de geral N campos anteriormente.
+        */
+      }
+
+      // Função para verificar os valores
+      function verificarValores() {
+        let dentroIntervalo = 0;
+        let foraIntervalo = 0;
+
+        for (let i = 1; i <= 10; i++) {
+          const valor = parseInt(document.getElementById(`valor${i}`).value);
+
+          if (!isNaN(valor)) {
+            if (valor >= 24 && valor <= 42) {
+              dentroIntervalo++;
+            } else {
+              foraIntervalo++;
+            }
+          } else {
+            alert(`Valor ${i} é inválido. Preencha todos os campos.`);
+            return;
+          }
+        }
+
+        // Exibir resultado
+        document.getElementById("resultado").innerHTML = `
+        <div class="alert alert-info">
+          <strong>Valores dentro do intervalo [24, 42]:</strong> ${dentroIntervalo}<br>
+          <strong>Valores fora do intervalo:</strong> ${foraIntervalo}
+        </div>
+      `;
+      }
+
+      // Gerar os campos de input quando a página carregar
+      window.onload = gerarCampos;
+    </script>
+  </body>
+</html>

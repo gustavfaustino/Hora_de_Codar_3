@@ -67,8 +67,8 @@ let aprovados = 0
 
         try {
           // Atribuição de notas
-          const nota1 = parseInt(document.getElementById("numero1").value);
-          const nota2 = parseInt(document.getElementById("numero2").value);
+          const nota1 = parseFloat(document.getElementById("numero1").value);
+          const nota2 = parseFloat(document.getElementById("numero2").value);
 
           // Verficação de erros
           if (isNaN(nota1) || isNaN(nota2)) {
